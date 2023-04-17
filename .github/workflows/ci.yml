@@ -13,7 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: failing-job
-    if: ${{ needs.build.result == 'success' }}
+    if: ${{ failure() }}
     steps:
       - name: Test output of previous job
         run: echo ${{ needs.build.result }}
