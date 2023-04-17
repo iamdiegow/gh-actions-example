@@ -16,4 +16,4 @@ jobs:
     if: ${{ failure() }}
     steps:
       - name: Test output of previous job
-        run: echo ${{ needs.build.result }}
+        run: echo ${{ needs.failing-job.result }}
